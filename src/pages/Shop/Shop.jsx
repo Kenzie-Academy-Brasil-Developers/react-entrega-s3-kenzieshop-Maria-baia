@@ -2,11 +2,13 @@ import { useSelector } from "react-redux"
 import { useState } from "react"
 import { useHistory } from "react-router"
 import Header from "../../components/Header/Header"
+import {ToastContainer, toast} from "react-toastify"
 
 const Shop = () => {
     const shop = useSelector((state) => state.shop)
     const [number, setNumber] = useState(shop.length)
     const handleRemove = (product) => {
+        toast.error("Produto removido do carrinho.")
         shop.splice(shop.indexOf(product), 1)
         setNumber(number - 1)
     }
@@ -50,6 +52,7 @@ const Shop = () => {
                 </button>
             </div>
             </div>
+            <ToastContainer/>
         </div>
     ) 
 }

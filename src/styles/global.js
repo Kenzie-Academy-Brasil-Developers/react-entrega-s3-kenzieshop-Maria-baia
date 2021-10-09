@@ -20,6 +20,7 @@ export default createGlobalStyle `
         color: #b5838d;
         border: none;
         font-size: 18px;
+        cursor: pointer;
     }
 
     .kenzie {
@@ -140,10 +141,12 @@ export default createGlobalStyle `
             display: flex;
             align-items: flex-start;
             margin: 1%;
+            justify-content: center;
         }
 
         .cart {
             margin: 0;
+            width: 60rem;
         }
 
         .cartProducts {

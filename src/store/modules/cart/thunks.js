@@ -1,4 +1,4 @@
-import {addProducts} from "./actions"
+import {addProducts} from "../cart/actions"
 
 export const addProductsThunk = (product) => (dispatch) => {
     const list = JSON.parse(localStorage.getItem("shop")) || []

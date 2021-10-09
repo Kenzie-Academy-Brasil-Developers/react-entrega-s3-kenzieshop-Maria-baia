@@ -1,5 +1,5 @@
 import { ADD_PRODUCTS } from "./actionType";
-import {cart} from "../cart/cart"
+import {cart} from "./cart"
 
 const productsReducer = (state = cart, action) => {
     switch (action.type){

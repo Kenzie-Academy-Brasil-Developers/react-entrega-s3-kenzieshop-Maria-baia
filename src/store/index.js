@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import shop from "./modules/products/reducer"
+import shop from "./modules/cart/reducer"
 import user from "./modules/login/reducer"
 
 

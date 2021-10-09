@@ -2,7 +2,8 @@ import axios from "axios"
 import { useEffect } from "react"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
-import {addProductsThunk} from "./thunks"
+import {addProductsThunk} from "../cart/thunks"
+import {ToastContainer, toast} from "react-toastify"
 
 export const Products = () => { 
     const [data, setData] = useState([])
@@ -16,6 +17,7 @@ export const Products = () => {
     })
 
     const handleClick = (product) => {
+        toast.success("Produto adicionado ao cariinho!")
         dispatch(addProductsThunk(product))
         setNumber(number + 1)
     }
@@ -26,7 +28,7 @@ export const Products = () => {
             <div className="products" >{data.map((product) => (
                 <div className="product">
                     <img src={product.image}/>
-                    <h2>{product.title}</h2>
+                    <h3>{product.title}</h3>
                     <p>{product.description}</p>
                     <span>{product.price}</span>
                     <button className="addCart" onClick={() => handleClick(product)}>
@@ -35,6 +37,7 @@ export const Products = () => {
                 </div>
             ))}
             </div>
+            <ToastContainer/>
         </div>
     )
 }
